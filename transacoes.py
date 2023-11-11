@@ -1,56 +1,79 @@
-from cadastro_de_cliente import, cliente
-from cadastro_contas import, conta
 
 class deposito:
     def __init__(self, saldo):
-        self.saldo = 0
+        self.saldo = "0R$"
         print(f"Seu saldo atual é {self.saldo}")
+        self.dep = int(input("Quanto deseja depositar? "))
+        if self.dep > 0:
+            pass
+        else:
+            print("Não é possível depositar esse valor, Tente novamente!")
+            self.dep = int(input("Quanto deseja depositar? "))
 
-    def colocar_saldo(self, dep):
-        dep = input("Quanto deseja depositar? ")
+        self.novo_valor = self.dep
+        print(f"Seu saldo atual é {self.novo_valor}R$")
 
-    def depositado(self, novo_valor):
-        novo_valor = self.dep
-        print(f"Seu saldo atual é {novo_valor}")
+valor = deposito('novo_valor')
+valor.novo_valor
 
 class saque:
-    def __init__(self):
-        self.saque = input("deseja sacar? ").upper()
-        if self.saque in ["S", "SIM"]:
-          saque = False
-
-    def retiro_saque(self):
-        print(f"Saldo suficiente {(deposito.depositado(novo_valor=int))}")
-        self.retiro_saque = input("Quanto deseja sacar? ")
-        if self.retiro_saque <= 0:
-            print("Não é possivel sacar esse valor")
+    def __init__(self, saqu):
+        self.saqu = True
+        self.saqu = input("Deseja sacar algum valor? ").upper()
+        if self.saqu in ["S", "SIM"]:
+            self.saqu = False
         else:
-            print("Retirado com sucesso!")
+            print("Obrigado pela visita!")
 
-        b = deposito.depositado(novo_valor=int)
-        return b - self.retiro_saque
+        print(f"Saldo suficiente {valor}")
+        self.retiro_saqu = int(input("Quanto deseja sacar? "))
+        while True:
+            if self.retiro_saqu < 0:
+                print("Não é possivel sacar esse valor")
+            else:
+                print("Retirado com sucesso!")
+            break
+
+sak = saque('retiro_saqu')
+sak.retiro_saqu
 
 class transferencia:
-    def __init__(self, transf, pessoa_tran):
-        self.transf = input("deseja fazer uma transferencia? ").upper()
+    def __init__(self, transf):
+        transferencia = True
+        self.transf = input("Deseja fazer uma transferencia? ").upper()
         if self.transf in ["S", "SIM"]:
-          transferencia = False
+            transferencia = False
+        else:
+            print("Obrigado pela visita!")
 
         self.pessoa_tran = input("Pra quem deseja fazer a transferencia? ")
-
-    def saldo_transferencia(self, saldo_tran):
-        self.saldo_tran = input("Quanto deseja transferir? ")
-        if self.saldo_tran <= 0:
+        self.saldo_tran = int(input("Quanto deseja transferir? "))
+        if self.saldo_tran < 0:
             print("Valor indisponível")
         else:
-            print("Tranferência feita com sucesso!")
+            print(f"Tranferência feita com sucesso, Você transferiu {self.saldo_tran}R$ para {self.pessoa_tran}!")
+
+tr = transferencia('saldo_tran')
+tr.saldo_tran
 
 class verificar_saldo:
-    def __init__(self):
+    def __init__(self, verific):
+        verificar_saldo = True
         self.verificacao = input("Deseja vereficar saldo da conta? ")
         if self.verificacao in ['SIM', 'S']:
             verificar_saldo = False
+        else:
+            print("Obrigado pela visita!")
+
+        print(valor - sak)
+        return valor - sal_trs
+
+verific = verificar_saldo('verficacao')
+verific.verificacao
+valor.novo_valor
+sak.retiro_saqu
+tr.saldo_tran
 
 class historico:
     def __init__(self):
-        return transferencia.saldo_transferencia(saldo_tran=int)
+        return valor, sak, tr
